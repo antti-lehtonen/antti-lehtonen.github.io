@@ -41,30 +41,73 @@ for (i = 0; i < buttons.length; i++) {
 
 function enlarge(id) {
     if (calendarWeeks[id] <= currentDate){
-        document.getElementById(id).style.scale = 1.3;
+        let interval = null;
+        let buttonscale = 1;
+        clearInterval(interval);
+        interval = setInterval(frame, 5)
+            function frame() {
+                if (buttonscale >= 1.3) {
+                    clearInterval(interval)
+                }
+                else {
+                    buttonscale += 0.02;
+                    document.getElementById(id).style.scale = buttonscale;
+                }
+            }
+        
     }
 }
 
 function shrink(id) {
     if (calendarWeeks[id] <= currentDate){
-        document.getElementById(id).style.scale = 1;
+        let interval = null;
+        let buttonscale = 1.3;
+        clearInterval(interval);
+        interval = setInterval(frame, 5)
+            function frame() {
+                if (buttonscale <= 1) {
+                    clearInterval(interval)
+                }
+                else {
+                    buttonscale -= 0.02;
+                    document.getElementById(id).style.scale = buttonscale;
+                }
+            }
     }
-}
-
-function scrollIn(){
-    
 }
 
 function openSesame(id) {
     if (calendarWeeks[id] <= currentDate){
-        //document.getElementById(id).style.backgroundColor = "lightblue";
-        document.getElementById("content").style.display = "flex";
-        document.getElementById("content2").style.display = "flex";
-    
-        document.getElementById("showtext").innerHTML = paragraphs[id];
-        document.getElementById("showpic").innerHTML = "<img src=\"images/" + id + ".jpg\" width=\"530\"></img>\"";
+        let interval = null;
+        let colorfade = 0;
+        let red = 113;
+        let green = 146;
+        let blue = 170;
+        let opacity = 0;
+        let padding = 50;
+        document.getElementById(id).style.backgroundColor =  "rgb(" + red + "," + green + "," +blue +")";
+        clearInterval(interval);
+        interval = setInterval(frame, 15)
+            function frame() {
+                if (colorfade >= 50) {
+                    clearInterval(interval)
+                }
+                else {
+                    colorfade ++;
+                    opacity += 0.02;
+                    padding --;
+                    red ++;
+                    green ++;
+                    blue ++;
+                    document.getElementById(id).style.backgroundColor = "rgb(" + red + "," + green + "," +blue +")";
+                    document.getElementById("content").style.opacity = opacity;
+                    document.getElementById("content2").style.opacity = opacity;
+                    document.getElementById("content").style.paddingTop = padding + "px";
+                    document.getElementById("content2").style.paddingTop = padding + "px";
+                    document.getElementById("showtext").innerHTML = paragraphs[id];
+                    document.getElementById("showpic").innerHTML = "<img src=\"images/" + id + ".jpg\" width=\"530\"></img>\"";
+                }
+            } 
     }
 
 }
-
-    
