@@ -1,4 +1,3 @@
-let develop = 0;
 
 const buttonColor = "lightblue";
 const currentDate = new Date();
@@ -35,19 +34,19 @@ const paragraphs = [
 const buttons = document.getElementsByClassName('button');
 
 for (i = 0; i < buttons.length; i++) {
-    if (calendarWeeks[buttons[i].id] <= currentDate || develop != 0){
+    if (calendarWeeks[buttons[i].id] <= currentDate){
         document.getElementById(buttons[i].id).style.backgroundColor = buttonColor;
     }
 }
 
 function enlarge(id) {
-    if (calendarWeeks[id] <= currentDate|| develop != 0){
+    if (calendarWeeks[id] <= currentDate){
         document.getElementById(id).style.scale = 1.3;
     }
 }
 
 function shrink(id) {
-    if (calendarWeeks[id] <= currentDate|| develop != 0){
+    if (calendarWeeks[id] <= currentDate){
         document.getElementById(id).style.scale = 1;
     }
 }
@@ -57,14 +56,15 @@ function scrollIn(){
 }
 
 function openSesame(id) {
-    if (calendarWeeks[id] <= currentDate || develop != 0){
-        document.getElementById(id).style.backgroundColor = "blue";
-    }
+    if (calendarWeeks[id] <= currentDate){
+        //document.getElementById(id).style.backgroundColor = "lightblue";
         document.getElementById("content").style.display = "flex";
         document.getElementById("content2").style.display = "flex";
     
-    document.getElementById("showtext").innerHTML = paragraphs[id];
-    document.getElementById("showpic").innerHTML = "<img src=\"images/" + id + ".jpg\" width=\"530\"></img>\"";
+        document.getElementById("showtext").innerHTML = paragraphs[id];
+        document.getElementById("showpic").innerHTML = "<img src=\"images/" + id + ".jpg\" width=\"530\"></img>\"";
+    }
+
 }
 
     
