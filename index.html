@@ -3,13 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIKOn kesäkalenteri 2025</title>
     <link rel="stylesheet" href="styles.css">
-    <title>maansiirto jorma penttinen</title>
 </head>
 <body>
-    <h1>Maansiirto Jorma Penttinen OY</h1>
-    <p>sample text</p>
-    <h2>texstiä</h2>
-    <p>lisää tekstiä</p>
+    <h1>
+        TIKOn Kesäkalenteri 2025
+        
+    </h1>
+    <div class="calendar">
+        <div><input type="button" class="button" id="0" value="Viikko 1" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="1" value="Viikko 2" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="2" value="Viikko 3" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="3" value="Viikko 4" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="4" value="Viikko 5" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="5" value="Viikko 6" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="6" value="Viikko 7" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="7" value="Viikko 8" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="8" value="Viikko 9" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="9" value="Viikko 10" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="10" value="Viikko 11" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="11" value="Viikko 12" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <div><input type="button" class="button" id="12" value="Viikko 13" onclick="openSesame(this.id)" onmouseover="enlarge(this.id)" onmouseleave="shrink(this.id)"></div>
+        <script src="calendar.js"></script>
+    </div>
+    <div class="content" id="content">
+        <div class="inner" id="left">
+            <p id="showtext" style="font-family:Arial, Helvetica, sans-serif;font-size: 12;"></p>
+        </div>
+    </div>
+    <div class="content" id="content2">
+        <div class="inner" id="right">
+            <p id="showpic"></p>
+        </div>
+    </div>
 </body>
 </html>
